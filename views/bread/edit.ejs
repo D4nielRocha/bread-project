@@ -1,0 +1,56 @@
+<% layout('layout/boilerplate')%>
+<div class="row">
+    <h1 class="text-center">Edit <%= bread.title %> </h1>
+        <div class="col-6 offset-3">
+            <form action="/bread" method="POST" novalidate class="validated-form">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Bread Type</label>
+                    <input class="form-control" type="text" id="title" name="bread[title]" value="<%= bread.title %>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="cookingTime">Cooking Time -- in min</label>
+                    <input class="form-control" type="text" id="cookingTime" name="bread[cookingTime]" value="<%= bread.cookingTime %>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="country">Country</label>
+                    <input class="form-control" type="text" id="country" name="bread[country]" value="<%= bread.country %>">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="image">Image</label>
+                    <input class="form-control" type="text" id="image" name="bread[image]" value="<%= bread.image %>">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Cost</span>
+                    <input type="number" name="bread[cost]" step="0.1" id="cost" class="form-control" placeholder="0.00" value="<%= bread.cost %>" required>
+                    <span class="input-group-text" >€</span>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="recipe">Recipe</label>
+                    <textarea class="form-control" type="text" id="recipe" name="bread[recipe]" required><%= bread.recipe %></textarea> 
+                      <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-md btn-success">Edit Post</button>
+                </div>
+            </form>
+            <a href="/bread/<%= bread._id %>">Back to All Posts</a>
+        </div>
+    </div>
+</div>
