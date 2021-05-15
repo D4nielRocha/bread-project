@@ -2,7 +2,7 @@
 <div class="row">
     <h1 class="text-center">Edit <%= bread.title %> </h1>
         <div class="col-6 offset-3">
-            <form action="/bread" method="POST" novalidate class="validated-form">
+            <form action="/bread/<%= bread._id %>?_method=PUT" method="POST" novalidate class="validated-form">
                 <div class="mb-3">
                     <label class="form-label" for="title">Bread Type</label>
                     <input class="form-control" type="text" id="title" name="bread[title]" value="<%= bread.title %>" required>

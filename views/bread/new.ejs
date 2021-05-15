@@ -10,6 +10,9 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+                        Title must not be empty
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="cookingTime">Cooking Time -- in min</label>
@@ -17,12 +20,18 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+                        Cooking time must not be empty
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="country">Country</label>
-                    <input class="form-control" type="text" id="country" name="bread[country]">
+                    <input class="form-control" type="text" id="country" name="bread[country]" required>
                     <div class="valid-feedback">
                         Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Country must not be empty
                     </div>
                 </div>
                 <div class="mb-3">
@@ -34,10 +43,13 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text">Cost</span>
-                    <input type="number" name="bread[cost]" step="0.1" id="cost" class="form-control" placeholder="0.00" required>
+                    <input type="number" name="bread[cost]" step="0.01" id="cost" class="form-control" placeholder="0.00" required>
                     <span class="input-group-text" >€</span>
                     <div class="valid-feedback">
                         Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Cost must not be empty
                     </div>
                   </div>
                 <div class="mb-3">
@@ -45,6 +57,9 @@
                     <textarea class="form-control" type="text" id="recipe" name="bread[recipe]" required></textarea> 
                     <div class="valid-feedback">
                         Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Recipe must not be empty
                     </div>
                 </div>
                 <div class="mb-3">
