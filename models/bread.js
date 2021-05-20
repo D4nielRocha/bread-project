@@ -12,6 +12,10 @@ const BreadSchema = new Schema({
     functional: Schema.Types.Boolean,
     glutenFree: Schema.Types.Boolean,
     keto: Schema.Types.Boolean,
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
     recipe:{
         type: String,
         required: true
@@ -22,7 +26,12 @@ const BreadSchema = new Schema({
         min: 0
     },
     country: String,
-    image: String,
+    images: [
+        {
+            url: String,
+            filename: String
+        }
+    ],
     cost: {
         type: Schema.Types.Decimal128,
         min: 0

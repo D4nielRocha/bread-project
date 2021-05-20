@@ -3,7 +3,7 @@
 <div class="row">
     <h1 class="text-center">New Bread Post</h1>
         <div class="col-6 offset-3">
-            <form action="/bread" method="POST" novalidate class="validated-form">
+            <form action="/bread" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label class="form-label" for="title">Bread Type</label>
                     <input class="form-control" type="text" id="title" name="bread[title]" required>
@@ -34,13 +34,21 @@
                         Country must not be empty
                     </div>
                 </div>
-                <div class="mb-3">
+                <input type="file" name="image" id="" multiple>
+                <!-- <div class="mb-3">
+                    <label class="form-label" for="image">Image</label>
+                    <input class="form-control" type="file" id="image" name="bread[image]">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div> -->
+                <!-- <div class="mb-3">
                     <label class="form-label" for="image">Image</label>
                     <input class="form-control" type="text" id="image" name="bread[image]">
                     <div class="valid-feedback">
                         Looks good!
                     </div>
-                </div>
+                </div> -->
                 <div class="input-group mb-3">
                     <span class="input-group-text">Cost</span>
                     <input type="number" name="bread[cost]" step="0.01" id="cost" class="form-control" placeholder="0.00" required>

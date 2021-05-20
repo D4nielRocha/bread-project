@@ -24,13 +24,14 @@
                         Looks good!
                     </div>
                 </div>
-                <div class="mb-3">
+                <input type="file" name="image" id="" multiple>
+                <!-- <div class="mb-3">
                     <label class="form-label" for="image">Image</label>
                     <input class="form-control" type="text" id="image" name="bread[image]" value="<%= bread.image %>">
                     <div class="valid-feedback">
                         Looks good!
                     </div>
-                </div>
+                </div> -->
                 <div class="input-group mb-3">
                     <span class="input-group-text">Cost</span>
                     <input type="number" name="bread[cost]" step="0.1" id="cost" class="form-control" placeholder="0.00" value="<%= bread.cost %>" required>

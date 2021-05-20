@@ -1,6 +1,7 @@
 
 <% layout('layout/boilerplate') %>
 
+
 <h1 class="d-inline-block">All Posts</h1>
 <a class="btn btn-md btn-dark mb-3 d-inline-block mx-5" href="/bread/new">Add Post</a>
 
@@ -9,7 +10,9 @@
         <div class="card" mb-3>
             <div class="row">
                 <div class="col-md-4">
-                    <img  class="img-fluid" src="<%= each.image%>" alt="">
+                    <% for(let img of each.images) { %> 
+                    <img  class="img-fluid" src="<%= img.url%>" alt="">
+                    <% } %> 
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">

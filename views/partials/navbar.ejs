@@ -10,6 +10,15 @@
           <a class="nav-link" href="/bread">All Posts</a>
           <a class="nav-link" href="/bread/new">New Bread</a>
         </div>
+        <div class="navbar-nav ml-auto ">
+          <% if(!loggedUser){ %> 
+          <a class="nav-link" href="/login">Login</a>
+          <a class="nav-link" href="/register">Register</a>
+          <% } else { %> 
+          <a class="nav-link" href="/details">Logged in as: <%= loggedUser.username %></a>
+          <a class="nav-link" href="/logout">Logout</a>
+          <% } %> 
+        </div>
       </div>
     </div>
   </nav>

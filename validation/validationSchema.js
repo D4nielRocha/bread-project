@@ -5,7 +5,7 @@ const breadJoiSchema = Joi.object({
         title: Joi.string().required(),
         recipe: Joi.string().required(),
         country: Joi.string(),
-        image: Joi.string(),
+        // images: Joi.string(),
         cost: Joi.number().required().min(0),
         cookingTime: Joi.string().required()
     }).required()

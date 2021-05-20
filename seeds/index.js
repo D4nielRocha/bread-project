@@ -27,7 +27,8 @@ const seedDb = async() => {
             country: `${sample(countries).name}`,
             image: 'https://source.unsplash.com/collection/3666026',
             recipe: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, id",
-            lowCarb: true
+            lowCarb: true,
+            author: "60a503ed154307452425464a"
         })
     await bread.save();
     }

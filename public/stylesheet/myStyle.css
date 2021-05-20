@@ -7,10 +7,29 @@ html, * {
     display: none;
 }
 
-#background{
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -2;
-    
+
+.card-show{
+    margin: auto;
+    width: 600px;
 }
+
+.card-show img{
+    width: 600px;
+    height: 500px;
+}
+
+.review-form{
+    width: 600px;
+}
+
+.starability-result{
+    width: 10px;
+    height: 5px;
+}
+
+.bread-show .carousel .carousel-inner .carousel-item img{
+    width: 600px;
+    margin: auto;
+    height: 400px;
+}
+
