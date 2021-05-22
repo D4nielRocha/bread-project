@@ -27,9 +27,45 @@ html, * {
     height: 5px;
 }
 
+.index-show{
+    height: 250px;
+}
+
 .bread-show .carousel .carousel-inner .carousel-item img{
     width: 600px;
     margin: auto;
     height: 400px;
 }
+
+.index-show .carousel .carousel-inner .carousel-item img{
+    width: 100%;
+    height: 250px;
+}
+
+input[type="file"]{
+    outline: none;
+}
+
+.auth{
+    margin-left: auto;
+}
+
+.img-thumbnail{
+    padding: 0;
+    margin: 0;
+    width: 75px;
+    height: 75px;
+}
+
+.currentImages{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+
+
+
+
+
 

@@ -25,7 +25,22 @@ const seedDb = async() => {
         const bread = new Bread({
             title: `${sample(breads)}`,
             country: `${sample(countries).name}`,
-            image: 'https://source.unsplash.com/collection/3666026',
+            images: [
+                {
+                  url: 'https://res.cloudinary.com/dwaqzhpcj/image/upload/v1621521391/bread/aglt6y8i6hrksusmsjrv.jpg',
+                  filename: 'bread/aglt6y8i6hrksusmsjrv'
+                },
+                {
+                  url: 'https://res.cloudinary.com/dwaqzhpcj/image/upload/v1621521391/bread/og2rkdush3nexivkyxvz.jpg',
+                  filename: 'bread/og2rkdush3nexivkyxvz'
+                },
+                {
+                  url: 'https://res.cloudinary.com/dwaqzhpcj/image/upload/v1621521391/bread/ddjeg59viivtaoth3nvg.jpg',
+                  filename: 'bread/ddjeg59viivtaoth3nvg'
+                }
+              ],
+            geometry: {type: "Point", coordinates: [-6.268388557204144 ,53.31957532907056]},
+            cookingTime: 120,
             recipe: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, id",
             lowCarb: true,
             author: "60a503ed154307452425464a"

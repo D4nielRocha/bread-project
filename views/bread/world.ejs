@@ -1,0 +1,25 @@
+<%- layout('layout/boilerplate') %>
+
+<style>
+    a{
+        text-decoration: none;
+        font-size: 1rem;
+        text-transform: capitalize;
+        color: #242424;
+    }
+</style>
+
+<!-- <div class="clusterMapDiv" style="width: 100vw; min-height: 50vh;"> -->
+
+    <div id="map" style='width: 100%; min-height: 50vh;'></div>
+
+
+<!-- </div> -->
+
+<script>
+    const token = '<%-process.env.MAPBOX_TOKEN%>';
+    const strBread = '<%-JSON.stringify(bread)%>'
+
+</script>
+
+<script src="/scripts/clusterMap.js"></script>

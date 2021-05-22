@@ -26,7 +26,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="country">Country</label>
-                    <input class="form-control" type="text" id="country" name="bread[country]" required>
+                    <input class="form-control" type="text" id="country" name="bread[country]">
                     <div class="valid-feedback">
                         Looks good!
                     </div>
@@ -34,21 +34,11 @@
                         Country must not be empty
                     </div>
                 </div>
-                <input type="file" name="image" id="" multiple>
-                <!-- <div class="mb-3">
-                    <label class="form-label" for="image">Image</label>
-                    <input class="form-control" type="file" id="image" name="bread[image]">
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                </div> -->
-                <!-- <div class="mb-3">
-                    <label class="form-label" for="image">Image</label>
-                    <input class="form-control" type="text" id="image" name="bread[image]">
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                </div> -->
+                <!-- <input class="my-3" type="file" name="image" id="" multiple> -->
+                <div class="mb-5 custom-file">
+                    <label for="uploadImages" class="form-label custom-file-label">Upload Images</label>
+                    <input class="form-control" type="file" name="image" id="uploadImages" multiple>
+                </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text">Cost</span>
                     <input type="number" name="bread[cost]" step="0.01" id="cost" class="form-control" placeholder="0.00" required>

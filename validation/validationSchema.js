@@ -8,7 +8,8 @@ const breadJoiSchema = Joi.object({
         // images: Joi.string(),
         cost: Joi.number().required().min(0),
         cookingTime: Joi.string().required()
-    }).required()
+    }).required(),
+    deleteImages: Joi.array()
 }) 
 
 const reviewJoiSchema = Joi.object({

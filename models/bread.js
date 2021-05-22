@@ -2,6 +2,18 @@ const mongoose = require('mongoose');
 const Review = require('./review')
 const Schema = mongoose.Schema;
 
+const imageSchema = new Schema({
+        url: String,
+        filename: String
+})
+
+//image virtuals
+imageSchema.virtual('thumbnail').get(function () {
+    return this.url.replace('/upload', '/upload/w_200');
+})
+
+const opts = {toJSON: {virtuals: true}};
+
 
 const BreadSchema = new Schema({
     title: {
@@ -22,16 +34,25 @@ const BreadSchema = new Schema({
     },
     cookingTime: {
         type: Number,
-        require: true,
+        required: true,
         min: 0
     },
-    country: String,
-    images: [
-        {
-            url: String,
-            filename: String
+    country: {
+        type: String,
+        required: false
+    },
+    geometry: {
+        type: {
+          type: String, 
+          enum: ['Point'],
+          required: true
+        },
+        coordinates: {
+          type: [Number],
+          required: true
         }
-    ],
+      },
+    images: [imageSchema],
     cost: {
         type: Schema.Types.Decimal128,
         min: 0
@@ -42,7 +63,20 @@ const BreadSchema = new Schema({
             ref: 'Review'
         }
     ]
-});
+}, opts);
+
+
+
+//Bread Virtuals
+
+BreadSchema.virtual('properties.title').get(function(){
+    return this.title;
+})
+
+BreadSchema.virtual('properties.id').get(function(){
+    return this._id;
+})
+
 
 BreadSchema.post('findOneAndDelete', async function(bread){
     if(bread){

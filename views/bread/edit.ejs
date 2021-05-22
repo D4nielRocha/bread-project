@@ -2,7 +2,7 @@
 <div class="row">
     <h1 class="text-center">Edit <%= bread.title %> </h1>
         <div class="col-6 offset-3">
-            <form action="/bread/<%= bread._id %>?_method=PUT" method="POST" novalidate class="validated-form">
+            <form action="/bread/<%= bread._id %>?_method=PUT" method="POST" novalidate class="validated-form" enctype="multipart/form-data" multiple>
                 <div class="mb-3">
                     <label class="form-label" for="title">Bread Type</label>
                     <input class="form-control" type="text" id="title" name="bread[title]" value="<%= bread.title %>" required>
@@ -24,14 +24,21 @@
                         Looks good!
                     </div>
                 </div>
-                <input type="file" name="image" id="" multiple>
-                <!-- <div class="mb-3">
-                    <label class="form-label" for="image">Image</label>
-                    <input class="form-control" type="text" id="image" name="bread[image]" value="<%= bread.image %>">
-                    <div class="valid-feedback">
-                        Looks good!
+                <div class="mb-4 custom-file">
+                    <label for="uploadImages" class="form-label custom-file-label">Upload Images</label>
+                    <input class="form-control" type="file" name="image" id="uploadImages" multiple>
+                </div>
+                <div class="mb-4 currentImages">
+                    <% bread.images.forEach(function (img, i) { %> 
+                    <div class="form-check-inline">
+                        <div class="check">
+                            <input type="checkbox" name="deleteImages[]" id="img-<%=i%> " value="<%=img.filename%>">
+                            <label for="img-<%=i%> ">Delete</label>
+                        </div>
+                        <img class="img-thumbnail" src="<%=img.thumbnail%>"  alt="">
                     </div>
-                </div> -->
+                    <% }) %> 
+                </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text">Cost</span>
                     <input type="number" name="bread[cost]" step="0.1" id="cost" class="form-control" placeholder="0.00" value="<%= bread.cost %>" required>

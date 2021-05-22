@@ -1,7 +1,6 @@
 
 <% layout('layout/boilerplate') %>
 
-
 <h1 class="d-inline-block">All Posts</h1>
 <a class="btn btn-md btn-dark mb-3 d-inline-block mx-5" href="/bread/new">Add Post</a>
 
@@ -9,14 +8,35 @@
     <% for(let each of bread){  %>
         <div class="card" mb-3>
             <div class="row">
-                <div class="col-md-4">
-                    <% for(let img of each.images) { %> 
-                    <img  class="img-fluid" src="<%= img.url%>" alt="">
-                    <% } %> 
+                <div class="col-md-4 index-show">
+                    <div id="indexShow<%=each._id%>" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+                        <div class="carousel-inner">
+                          <% if(each.images.length) { %> 
+                          <% each.images.forEach((image, idx) => { %> 
+                          <div class="carousel-item <%= idx === 0 ? 'active' : '' %> ">
+                            <img src="<%= image.url%>" class="d-block" alt="">
+                          </div>
+                          <% }) %> 
+                          <% } else { %>
+                            <div class="carousel-item active">
+                              <img src="https://res.cloudinary.com/dwaqzhpcj/image/upload/v1621521391/bread/aglt6y8i6hrksusmsjrv.jpg" class="d-block" alt="">
+                            </div>  
+                            <% } %>  
+                        </div>
+                        <a class="carousel-control-prev" type="button" data-bs-target="#indexShow<%=each._id%>" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" type="button" data-bs-target="#indexShow<%=each._id%>" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </a>
+                      </div>
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title"><%= each.title %></h5>
+                        <h5 class="card-title"><%= each.title.toLowerCase().charAt(0).toUpperCase() + each.title.slice(1) %></h5>
+                        <!-- <h5 class="card-title"><%= each.properties.popUpText %></h5> -->
                         <p class="card-text">
                             <small class="text-muted"><%= each.country %></small>
                         </p>
@@ -29,3 +49,4 @@
     <% } %>
 
 </ul>
+

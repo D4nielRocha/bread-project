@@ -18,14 +18,16 @@ const upload = multer({storage});
 
 router.route('/')
     .get(wrapAsync(breadController.index))
-    .post(isLoggedin, upload.array('image'), validateBread, wrapAsync(breadController.postNew))
+    .post(isLoggedin, upload.array('image',3), validateBread, wrapAsync(breadController.postNew))
     
 router.get('/new', isLoggedin, breadController.getNew);
 
+router.get('/world', breadController.clusterMap);
 
- router.route('/:id')
+
+router.route('/:id')
     .get(wrapAsync(breadController.getShow))
-    .put(isLoggedin, isAuthor, validateBread, wrapAsync(breadController.update))
+    .put(isLoggedin, isAuthor, upload.array('image',3), validateBread, wrapAsync(breadController.update))
     .delete(isLoggedin, isAuthor, wrapAsync(breadController.delete))
 
 
