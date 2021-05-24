@@ -1,52 +1,47 @@
 
 <% layout('layout/boilerplate') %>
+<div class="index-header">
+  <h1 class="d-inline-block">All Posts</h1>
+  <a class="btn btn-md btn-dark mb-3" href="/bread/new">Add Post</a>
+</div>
 
-<h1 class="d-inline-block">All Posts</h1>
-<a class="btn btn-md btn-dark mb-3 d-inline-block mx-5" href="/bread/new">Add Post</a>
-
-<ul>
+  <div class="row gx-0">
     <% for(let each of bread){  %>
-        <div class="card" mb-3>
-            <div class="row">
-                <div class="col-md-4 index-show">
-                    <div id="indexShow<%=each._id%>" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
-                        <div class="carousel-inner">
-                          <% if(each.images.length) { %> 
-                          <% each.images.forEach((image, idx) => { %> 
-                          <div class="carousel-item <%= idx === 0 ? 'active' : '' %> ">
-                            <img src="<%= image.url%>" class="d-block" alt="">
-                          </div>
-                          <% }) %> 
-                          <% } else { %>
-                            <div class="carousel-item active">
-                              <img src="https://res.cloudinary.com/dwaqzhpcj/image/upload/v1621521391/bread/aglt6y8i6hrksusmsjrv.jpg" class="d-block" alt="">
-                            </div>  
-                            <% } %>  
-                        </div>
-                        <a class="carousel-control-prev" type="button" data-bs-target="#indexShow<%=each._id%>" data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" type="button" data-bs-target="#indexShow<%=each._id%>" data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
-                        </a>
-                      </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title"><%= each.title.toLowerCase().charAt(0).toUpperCase() + each.title.slice(1) %></h5>
-                        <!-- <h5 class="card-title"><%= each.properties.popUpText %></h5> -->
-                        <p class="card-text">
-                            <small class="text-muted"><%= each.country %></small>
-                        </p>
-                        <p class="card-text"><%= each.recipe %></p>  
-                        <a class="btn btn-md btn-primary" href="/bread/<%=each._id%> ">View <%= each.title %> </a>
-                    </div>
-                </div>
+      <div class="card card-index" >
+        <div id="indexShow<%=each._id%>" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+            <div class="carousel-inner">
+              <% if(each.images.length) { %> 
+              <% each.images.forEach((image, idx) => { %> 
+              <div class="carousel-item <%= idx === 0 ? 'active' : '' %> ">
+                <img src="<%= image.url%>" class="d-block" alt="">
+              </div>
+              <% }) %> 
+              <% } else { %>
+                <div class="carousel-item active">
+                  <img src="https://res.cloudinary.com/dwaqzhpcj/image/upload/v1621521391/bread/aglt6y8i6hrksusmsjrv.jpg" class="d-block" alt="">
+                </div>  
+                <% } %>  
             </div>
-        </div>
+            <a class="carousel-control-prev" type="button" data-bs-target="#indexShow<%=each._id%>" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" type="button" data-bs-target="#indexShow<%=each._id%>" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </a>
+          </div>
+          <div class="col-md-12 text-index">
+              <div class="card-body body-index">
+                  <h5 class="card-title"><%= each.title.toLowerCase().charAt(0).toUpperCase() + each.title.slice(1) %></h5>
+                  <!-- <h5 class="card-title"><%= each.properties.popUpText %></h5> -->
+                  <p class="card-text">
+                      <small class="text-muted"><%= each.country %></small>
+                  </p>
+                  <p class="card-text"><%= each.recipe.substr(0,30) + "..." %></p>  
+                  <a class="btn btn-sm btn-primary mb-3" href="/bread/<%=each._id%> ">View <%= each.title %> </a>
+              </div>
+          </div>
+      </div>
     <% } %>
-
-</ul>
-
+  </div>

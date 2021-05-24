@@ -1,6 +1,6 @@
 <% layout('layout/boilerplate')%>
 
-<div class="row">
+<!-- <div class="row">
     <h1 class="text-center">Login</h1>
         <div class="col-6 offset-3">
             <form action="/login" method="POST" novalidate class="validated-form">
@@ -29,4 +29,38 @@
                 </div>
             </form>
         </div>
+</div> -->
+
+<div class="row card-row">
+    <div class="card login-card">
+        <img src="https://images.unsplash.com/photo-1589807445273-2789a01d0b4b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=925&q=80" class="card-img-top" alt="...">
+        <h2 class="card-title text-center">Login</h2>
+        <div class="card-body">
+            <form action="/login" method="POST" novalidate class="validated-form">
+                <div class="mb-3">
+                    <label class="form-label" for="username">Username</label>
+                    <input class="form-control" type="text" id="username" name="username" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Username must not be empty
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="password">Password</label>
+                    <input class="form-control" type="password" id="password" name="password" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Country must not be empty
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-md btn-success">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>

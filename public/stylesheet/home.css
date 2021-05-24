@@ -1,0 +1,103 @@
+body{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url("https://images.unsplash.com/photo-1473447547337-5770a453122d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.navbar-brand{
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.5rem;
+}
+.navbar-brand:hover{
+    color: white;
+}
+
+.fa-bars{
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.navbar-nav{
+    margin-left: auto;
+}
+
+.navbar-nav a{
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+}
+
+.navbar-nav a:hover{
+    color: white;
+    border-bottom: solid 1px white;
+}
+
+
+main{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main h1{
+    transform: translateY(-100%);
+    color: white;
+    font-size: 2.5rem;
+}
+
+.side-bar{
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    min-width: 15vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.active{
+    transform: translateX(0);
+}
+
+.side-bar .nav-link{
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    transform: translateY(-25vh);
+}
+
+.side-bar .nav-link:hover{
+    color: white;
+    border-left: 0.5px solid white;
+}
+
+
+.social-icons i {
+    color: white;
+    font-size: 2rem;
+    margin-left: 1.2rem;
+    transform: translateX(-50%);
+}
+
+
+
+.social-icons .fa-instagram:hover{
+    color: rgb(233, 40, 15);
+    border: none;
+}
+
+.social-icons .fa-facebook:hover{
+    color: rgb(15, 73, 233);
+    border: none;
+}
+
+
